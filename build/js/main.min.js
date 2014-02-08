@@ -5,6 +5,7 @@
   
   var scrollSpy = function(elements) {
     var $prevSource, prevTarget;
+    var navHeight = $(".sticky-nav").height();
 
     // Grab our targets initially so we don't have to do it in the onScroll listener
     var targets = $("[data-scroll-target]").map(function() {
@@ -24,7 +25,7 @@
       elements.each(function() {
         var $this = $(this);
 
-        if (this.offsetTop <= windowTop + 1) {
+        if (this.offsetTop - navHeight <= windowTop) {
           sourceToChange = $this;
           isChanged = $prevSource ? $prevSource[0] !== this : true;
         }
