@@ -1,5 +1,3 @@
-angular.module("steelApp", []);
-
 angular.module("steelApp").directive("ssSidebar", ["$window", "$document", function($window, $document) {
   return {
     restrict: "EA",

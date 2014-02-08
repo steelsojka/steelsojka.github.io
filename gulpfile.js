@@ -13,15 +13,16 @@ var mainJs = "build/js";
 
 gulp.task("scripts", function() {
   return gulp.src(jsSource)
-    .pipe(uglify())
-    .pipe(rename("main.min.js"))
+    //.pipe(uglify())
+    .pipe(concat("main.min.js"))
+    //.pipe(rename("main.min.js"))
     .pipe(gulp.dest(mainJs));
 });
 
 gulp.task("styles", function() {
   return gulp.src(sassSource)
     .pipe(sass())
-    .pipe(minifyCss())
+//    .pipe(minifyCss())
     .pipe(rename("main.min.css"))
     .pipe(gulp.dest("build/css"));
 });

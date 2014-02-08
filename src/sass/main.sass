@@ -1,29 +1,63 @@
-$black: black;
+$black: #232323;
 $blue: #086CA2;
 $orange: #FF8B00;
 
-.navigation {
-  background-color: black;
+.full-width {
   width: 100%;
-  padding: 5px;
+}
 
-  .nav-item {
-    float:right;
-    color: white;
-    padding: 10px 20px;
+body > section {
+  min-height: 100%;
+}
+
+section.about {
+  background-color: $blue;
+}
+
+section.projects {
+  background-color: $orange;
+}
+
+.nav > div {
+  display: inline-block;
+  padding: 10px;
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $orange;
   }
 }
 
-.content {
-  padding: 20px;  
+.table {
+  display: table;
+
+  .table-row {
+    display: table-row;
+
+    .table-cell {
+      display: table-cell;
+    }
+  }
 }
 
-.my-name {
-  font-size: 24px;
+.table-cell.center {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.name {
+  font-size: 80px;
+  font-family: 'Finger Paint', cursive;
+}
+
+.content {
+  height: 100%;
 }
 
 .clear {
   clear: both;
 }
-
-
