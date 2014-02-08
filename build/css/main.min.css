@@ -1,8 +1,16 @@
 .full-width {
   width: 100%; }
 
+.inline-block {
+  display: inline-block; }
+
 body > section {
   min-height: 100%; }
+
+body > section:first-child {
+  position: relative;
+  z-index: 20;
+  background-color: #FFF; }
 
 section.about {
   background-color: #086CA2; }
@@ -10,14 +18,44 @@ section.about {
 section.projects {
   background-color: #FF8B00; }
 
+section.resume {
+  background-color: #FFF; }
+
 .nav > div {
   display: inline-block;
   padding: 10px; }
   .nav > div a {
+    display: block;
     color: #000;
     text-decoration: none; }
   .nav > div a:hover {
     color: #FF8B00; }
+
+.fixed {
+  position: fixed; }
+
+.sticky-nav {
+  top: 0;
+  left: 0;
+  background-color: #000; }
+  .sticky-nav > div {
+    color: white;
+    padding: 15px; }
+  .sticky-nav > .projects.active {
+    background-color: #FF8B00; }
+  .sticky-nav > .about.active {
+    background-color: #086CA2; }
+  .sticky-nav > .resume.active {
+    background-color: #FFF;
+    color: #000; }
+
+.social {
+  z-index: 10;
+  bottom: 0;
+  right: 0;
+  background-color: blue;
+  height: 50px;
+  width: 300px; }
 
 .table {
   display: table; }

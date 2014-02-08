@@ -6,8 +6,18 @@ $orange: #FF8B00;
   width: 100%;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 body > section {
   min-height: 100%;
+}
+
+body > section:first-child {
+  position: relative;
+  z-index: 20;
+  background-color: #FFF;
 }
 
 section.about {
@@ -18,11 +28,16 @@ section.projects {
   background-color: $orange;
 }
 
+section.resume {
+  background-color: #FFF;
+}
+
 .nav > div {
   display: inline-block;
   padding: 10px;
 
   a {
+    display: block;
     color: #000;
     text-decoration: none;
   }
@@ -30,6 +45,43 @@ section.projects {
   a:hover {
     color: $orange;
   }
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky-nav {
+  top: 0;
+  left: 0;
+  background-color: #000;
+
+  > div {
+    color: white;
+    padding: 15px;
+  }
+
+  > .projects.active {
+    background-color: $orange;
+  }
+
+  > .about.active {
+    background-color: $blue;
+  }
+
+  > .resume.active {
+    background-color: #FFF;
+    color: #000;
+  }
+}
+
+.social {
+  z-index: 10;
+  bottom: 0;
+  right: 0;
+  background-color: blue;
+  height: 50px;
+  width: 300px;
 }
 
 .table {
