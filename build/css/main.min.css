@@ -37,15 +37,16 @@ section.resume {
 .sticky-nav {
   top: 0;
   left: 0;
-  background-color: #000; }
+  background-color: #232323;
+  font-family: 'Finger Paint', cursive; }
   .sticky-nav > div {
     color: white;
     padding: 15px; }
-  .sticky-nav > .projects.active {
+  .sticky-nav > .projects.active, .sticky-nav > .projects:hover {
     background-color: #FF8B00; }
-  .sticky-nav > .about.active {
+  .sticky-nav > .about.active, .sticky-nav > .about:hover {
     background-color: #086CA2; }
-  .sticky-nav > .resume.active {
+  .sticky-nav > .resume.active, .sticky-nav > .resume:hover {
     background-color: #FFF;
     color: #000; }
 
@@ -53,9 +54,12 @@ section.resume {
   z-index: 10;
   bottom: 0;
   right: 0;
-  background-color: blue;
-  height: 50px;
-  width: 300px; }
+  color: #FFF;
+  background-color: #232323; }
+  .social > div {
+    display: inline-block;
+    padding: 10px;
+    font-size: 24px; }
 
 .table {
   display: table; }

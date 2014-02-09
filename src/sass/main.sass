@@ -54,22 +54,27 @@ section.resume {
 .sticky-nav {
   top: 0;
   left: 0;
-  background-color: #000;
+  background-color: $black;
+  font-family: 'Finger Paint', cursive;
 
   > div {
     color: white;
     padding: 15px;
   }
 
-  > .projects.active {
+
+  > .projects.active,
+  > .projects:hover {
     background-color: $orange;
   }
 
-  > .about.active {
+  > .about.active,
+  > .about:hover {
     background-color: $blue;
   }
 
-  > .resume.active {
+  > .resume.active,
+  > .resume:hover {
     background-color: #FFF;
     color: #000;
   }
@@ -79,9 +84,14 @@ section.resume {
   z-index: 10;
   bottom: 0;
   right: 0;
-  background-color: blue;
-  height: 50px;
-  width: 300px;
+  color: #FFF;
+  background-color: $black;
+
+  > div {
+    display: inline-block;
+    padding: 10px;
+    font-size: 24px;
+  }
 }
 
 .table {

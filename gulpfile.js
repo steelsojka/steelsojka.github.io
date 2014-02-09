@@ -7,7 +7,7 @@ var minifyCss = require("gulp-minify-css");
 var watch = require("gulp-watch");
 var minifyHtml = require("gulp-minify-html");
 
-var jsSource = ["src/js/main.js"];
+var jsSource = ["src/js/app.js", "src/js/directives/*.js"];
 var sassSource = ["src/sass/*.sass"];
 var mainJs = "build/js";
 

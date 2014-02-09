@@ -3,10 +3,11 @@
     <link rel="stylesheet" href="build/css/normalize.css">
     <link rel="stylesheet" href="build/css/main.min.css">
     <link href='http://fonts.googleapis.com/css?family=Finger+Paint' rel='stylesheet' type='text/css'>
+    <link href='build/css/icofonts.css' rel='stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="build/js/main.min.js" defer></script>
   </head>
-  <body>
+  <body data-scroll-spy>
     <section class="content table full-width">
       <div class="table-row">
         <div class="table-cell center">
@@ -19,13 +20,16 @@
         </div>
       </div>
     </section>
-    <section id="about" class="about" data-scroll-spy="about">
+    <section id="about" class="about" data-scroll-source="about">
     </section>
-    <section id="projects" class="projects" data-scroll-spy="projects">
+    <section id="projects" class="projects" data-scroll-source="projects">
     </section>
-    <section id="resume" class="resume" data-scroll-spy="resume">
+    <section id="resume" class="resume" data-scroll-source="resume">
     </section>
     <div class="social fixed">
+      <div class="icon-facebook"></div>
+      <div class="icon-google-plus"></div>
+      <div class="icon-twitter"></div>
     </div>
     <div class="sticky-nav fixed full-width">
       <div class="inline-block about" data-scroll-animate="#about" data-scroll-target="about">about</div>
