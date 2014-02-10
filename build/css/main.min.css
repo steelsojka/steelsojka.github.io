@@ -4,8 +4,17 @@
 .inline-block {
   display: inline-block; }
 
+body {
+  font-size: 14px;
+  line-height: 1.428;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333; }
+
 body > section {
-  min-height: 100%; }
+  color: #FFF;
+  min-height: 100%;
+  padding: 60px 10px 10px 10px;
+  box-sizing: border-box; }
 
 body > section:first-child {
   position: relative;
@@ -18,12 +27,13 @@ section.about {
 section.projects {
   background-color: #FF8B00; }
 
-section.resume {
+section.contact {
   background-color: #FFF; }
 
 .nav > div {
   display: inline-block;
-  padding: 10px; }
+  padding: 10px;
+  font-size: 16px; }
   .nav > div a {
     display: block;
     color: #000;
@@ -34,21 +44,30 @@ section.resume {
 .fixed {
   position: fixed; }
 
+.skills {
+  font-size: 100px; }
+
 .sticky-nav {
   top: 0;
   left: 0;
   background-color: #232323;
-  font-family: 'Finger Paint', cursive; }
+  font-family: 'Finger Paint', cursive;
+  text-align: right; }
+  .sticky-nav .name {
+    font-size: 16px;
+    position: absolute;
+    left: 5px; }
   .sticky-nav > div {
     color: white;
-    padding: 15px; }
+    padding: 10px;
+    cursor: pointer; }
   .sticky-nav > .projects.active, .sticky-nav > .projects:hover {
     background-color: #FF8B00; }
   .sticky-nav > .about.active, .sticky-nav > .about:hover {
     background-color: #086CA2; }
-  .sticky-nav > .resume.active, .sticky-nav > .resume:hover {
+  .sticky-nav > .contact.active, .sticky-nav > .contact:hover {
     background-color: #FFF;
-    color: #000; }
+    color: #232323; }
 
 .social {
   z-index: 10;
@@ -73,6 +92,7 @@ section.resume {
   text-align: center; }
 
 .name {
+  color: #232323;
   font-size: 80px;
   font-family: 'Finger Paint', cursive; }
 
@@ -81,3 +101,15 @@ section.resume {
 
 .clear {
   clear: both; }
+
+.pull-left {
+  float: left; }
+
+.hero {
+  font-size: 42px;
+  padding: 15px;
+  background-color: #FFF;
+  line-height: 1; }
+
+.pointer {
+  cursor: pointer; }

@@ -10,8 +10,18 @@ $orange: #FF8B00;
   display: inline-block;
 }
 
+body {
+  font-size: 14px;
+  line-height: 1.428;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
 body > section {
+  color: #FFF;
   min-height: 100%;
+  padding: 60px 10px 10px 10px;
+  box-sizing: border-box;
 }
 
 body > section:first-child {
@@ -28,13 +38,14 @@ section.projects {
   background-color: $orange;
 }
 
-section.resume {
+section.contact {
   background-color: #FFF;
 }
 
 .nav > div {
   display: inline-block;
   padding: 10px;
+  font-size: 16px;
 
   a {
     display: block;
@@ -51,17 +62,28 @@ section.resume {
   position: fixed;
 }
 
+.skills {
+  font-size: 100px;
+}
+
 .sticky-nav {
   top: 0;
   left: 0;
   background-color: $black;
   font-family: 'Finger Paint', cursive;
+  text-align: right;
+
+  .name {
+    font-size: 16px;
+    position: absolute;
+    left: 5px;
+  }
 
   > div {
     color: white;
-    padding: 15px;
+    padding: 10px;
+    cursor: pointer;
   }
-
 
   > .projects.active,
   > .projects:hover {
@@ -73,10 +95,10 @@ section.resume {
     background-color: $blue;
   }
 
-  > .resume.active,
-  > .resume:hover {
+  > .contact.active,
+  > .contact:hover {
     background-color: #FFF;
-    color: #000;
+    color: $black;
   }
 }
 
@@ -112,6 +134,7 @@ section.resume {
 }
 
 .name {
+  color: $black;
   font-size: 80px;
   font-family: 'Finger Paint', cursive;
 }
@@ -122,4 +145,19 @@ section.resume {
 
 .clear {
   clear: both;
+}
+
+.pull-left {
+  float: left;
+}
+
+.hero {
+  font-size: 42px;
+  padding: 15px;
+  background-color: #FFF;
+  line-height: 1;
+}
+
+.pointer {
+  cursor: pointer;
 }
