@@ -182,9 +182,13 @@ section.contact {
   cursor: pointer;
 }
 
+.vertical-align-middle {
+  vertical-align: middle;
+}
+
 .me {
-  padding: 50px;
   box-sizing: border-box;
+  padding: 50px;
 
   img {
     border-radius: 1000px;
@@ -193,4 +197,14 @@ section.contact {
 
 .bg-light {
   background-color: lighten($grey, 25%);
+}
+
+.hero-padding {
+  padding: 50px;
+}
+
+@media (min-width: 992px) {
+  .hero-padding {
+    padding-left: 0;
+  }
 }
