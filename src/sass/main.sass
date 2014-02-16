@@ -4,6 +4,14 @@ $orange: #FF8B00;
 $white: #FDFDFD;
 $grey: rgb(150,150,150);
 
+@mixin stripes($angle, $fromColor, $toColor) {
+  background-image: linear-gradient($angle, $fromColor 25%, $toColor 25%, $toColor 50%, $fromColor 50%, $fromColor 75%, $toColor 75%, $toColor);
+  background-image: -webkit-linear-gradient($angle, $fromColor 25%, $toColor 25%, $toColor 50%, $fromColor 50%, $fromColor 75%, $toColor 75%, $toColor);
+  background-image: -moz-linear-gradient($angle, $fromColor 25%, $toColor 25%, $toColor 50%, $fromColor 50%, $fromColor 75%, $toColor 75%, $toColor);
+  background-image: -ms-linear-gradient($angle, $fromColor 25%, $toColor 25%, $toColor 50%, $fromColor 50%, $fromColor 75%, $toColor 75%, $toColor);
+  background-image: -o-linear-gradient($angle, $fromColor 25%, $toColor 25%, $toColor 50%, $fromColor 50%, $fromColor 75%, $toColor 75%, $toColor);
+}
+
 .full-width {
   width: 100%;
 }
@@ -196,7 +204,8 @@ section.contact {
 }
 
 .bg-light {
-  background-color: lighten($grey, 25%);
+  background-size: 150px 150px;
+  @include stripes(45deg, lighten($grey, 30%), lighten($grey, 35%));
 }
 
 .hero-padding {
