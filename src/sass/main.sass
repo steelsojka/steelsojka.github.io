@@ -1,6 +1,8 @@
 $black: #232323;
 $blue: #086CA2;
 $orange: #FF8B00;
+$white: #FDFDFD;
+$grey: rgb(150,150,150);
 
 .full-width {
   width: 100%;
@@ -10,36 +12,37 @@ $orange: #FF8B00;
   display: inline-block;
 }
 
+.relative {
+  position: relative;
+}
+
 body {
   font-size: 14px;
   line-height: 1.428;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  color: $black;
 }
 
 body > section {
-  color: #FFF;
   min-height: 100%;
-  padding: 60px 10px 10px 10px;
+  padding: 62px 0 0 0;
   box-sizing: border-box;
 }
 
 body > section:first-child {
   position: relative;
-  z-index: 20;
-  background-color: #FFF;
 }
 
 section.about {
-  background-color: $blue;
+//  background-color: $blue;
 }
 
 section.projects {
-  background-color: $orange;
+ // background-color: $orange;
 }
 
 section.contact {
-  background-color: #FFF;
+ // background-color: #FFF;
 }
 
 .nav > div {
@@ -69,50 +72,62 @@ section.contact {
 .sticky-nav {
   top: 0;
   left: 0;
-  background-color: $black;
-  font-family: 'Finger Paint', cursive;
   text-align: right;
+  z-index: 100;
+  background-color: transparentize($white, 0.2);
 
   .name {
-    font-size: 16px;
-    position: absolute;
-    left: 5px;
+    color: $black;
+    font-size: 30px;
+    padding: 10px 0 0 0;
   }
 
-  > div {
-    color: white;
-    padding: 10px;
+  .item {
+    font-weight: bold;
+    color: $grey;
+    padding: 20px;
+    font-size: 16px;
     cursor: pointer;
   }
 
-  > .projects.active,
-  > .projects:hover {
-    background-color: $orange;
+  .item.active {
+    color: $blue;
   }
 
-  > .about.active,
-  > .about:hover {
-    background-color: $blue;
+  .divider {
+    color: $grey;
+    font-size: 20px;
+    position: relative;
+    top: 3px;
   }
 
-  > .contact.active,
-  > .contact:hover {
-    background-color: #FFF;
-    color: $black;
+  .item:hover {
+    color: $orange;
   }
+}
+
+.site-label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: $grey;
 }
 
 .social {
   z-index: 10;
   bottom: 0;
   right: 0;
-  color: #FFF;
-  background-color: $black;
+  color: $grey;
+  background-color: transparentize($white, 0.2);
 
   > div {
     display: inline-block;
     padding: 10px;
     font-size: 24px;
+  }
+
+  > div:hover {
+    color: $blue;
   }
 }
 
@@ -136,7 +151,6 @@ section.contact {
 .name {
   color: $black;
   font-size: 80px;
-  font-family: 'Finger Paint', cursive;
 }
 
 .content {
@@ -158,6 +172,25 @@ section.contact {
   line-height: 1;
 }
 
+.container-width {
+  width: 960px; 
+  margin: 0 auto;
+  position: relative;
+}
+
 .pointer {
   cursor: pointer;
+}
+
+.me {
+  padding: 50px;
+  box-sizing: border-box;
+
+  img {
+    border-radius: 1000px;
+  }
+}
+
+.bg-light {
+  background-color: lighten($grey, 25%);
 }

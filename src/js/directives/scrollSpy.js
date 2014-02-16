@@ -62,6 +62,8 @@ directive("scroll-spy", function(element) {
     }
   };
 
+  onScroll();
+
   $window.on("scroll", onScroll);
 });
 
