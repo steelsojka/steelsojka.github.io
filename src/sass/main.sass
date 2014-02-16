@@ -3,6 +3,7 @@ $blue: #086CA2;
 $orange: #FF8B00;
 $white: #FDFDFD;
 $grey: rgb(150,150,150);
+$vendors: webkit, o, ms, moz;
 
 @mixin stripes($angle, $fromColor, $toColor) {
   background-image: linear-gradient($angle, $fromColor 25%, $toColor 25%, $toColor 50%, $fromColor 50%, $fromColor 75%, $toColor 75%, $toColor);
@@ -10,6 +11,13 @@ $grey: rgb(150,150,150);
   background-image: -moz-linear-gradient($angle, $fromColor 25%, $toColor 25%, $toColor 50%, $fromColor 50%, $fromColor 75%, $toColor 75%, $toColor);
   background-image: -ms-linear-gradient($angle, $fromColor 25%, $toColor 25%, $toColor 50%, $fromColor 50%, $fromColor 75%, $toColor 75%, $toColor);
   background-image: -o-linear-gradient($angle, $fromColor 25%, $toColor 25%, $toColor 50%, $fromColor 50%, $fromColor 75%, $toColor 75%, $toColor);
+}
+
+@mixin prefix($rule, $argument) {
+  @each $prefix in $vendors {
+    -#{$prefix}-#{$rule}: #{$argument};
+  }
+  #{$rule}: #{$argument};
 }
 
 .full-width {
@@ -73,16 +81,13 @@ section.contact {
   position: fixed;
 }
 
-.skills {
-  font-size: 100px;
-}
-
 .sticky-nav {
   top: 0;
   left: 0;
   text-align: right;
   z-index: 100;
   background-color: transparentize($white, 0.2);
+  border-bottom: 1px solid lighten($grey, 25%);
 
   .name {
     color: $black;
@@ -190,6 +195,30 @@ section.contact {
   cursor: pointer;
 }
 
+.skills {
+  padding: 20px 0; 
+  font-size: 28px;
+  color: $grey;
+
+  span {
+    display: inline-block;
+    padding: 0 10px;
+    position: relative;
+  }
+
+  span:hover {
+    color: $orange;
+  }
+
+  span:hover:after {
+    position: absolute;
+    content: attr(data-tip);
+    font-size: 16px;
+    top: -25px;
+    left: -2px;
+  }
+}
+
 .vertical-align-middle {
   vertical-align: middle;
 }
@@ -199,12 +228,14 @@ section.contact {
   padding: 50px;
 
   img {
-    border-radius: 1000px;
+    @include prefix(border-radius, 1000px);
   }
 }
 
 .bg-light {
-  background-size: 150px 150px;
+  border-top: 1px solid lighten($grey, 30%);
+  border-bottom: 1px solid lighten($grey, 30%);
+  @include prefix(background-size, 150px 150px);
   @include stripes(45deg, lighten($grey, 30%), lighten($grey, 35%));
 }
 
