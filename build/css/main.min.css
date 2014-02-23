@@ -51,8 +51,10 @@ body > section:first-child {
   color: #FDFDFD;
   background-color: #086CA2; }
 
-section.about h1 {
-  font-weight: bold; }
+section.about {
+  background-color: #FDFDFD; }
+  section.about h1 {
+    font-weight: bold; }
 
 
 
@@ -202,6 +204,13 @@ section.about h1 {
 
 .hero-padding {
   padding: 50px; }
+
+.layer {
+  -webkit-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  transform: translateZ(0); }
 
 @media (min-width: 992px) {
   .hero-padding {

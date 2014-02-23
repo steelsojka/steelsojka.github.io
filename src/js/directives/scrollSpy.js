@@ -1,4 +1,4 @@
-directive("scroll-spy", function(element) {
+directive("scroll-spy", function(element, emitter) {
   var ACTIVE_CLASS = "active";
   var $prevSource, prevTarget;
   var $window = $(window);
@@ -20,7 +20,8 @@ directive("scroll-spy", function(element) {
 
     return {
       $el: $this,
-      id: $this.data("scroll-target")
+      id: $this.data("scroll-target"),
+      data: $this.data("scroll-spy-data")
     };
   });
 
@@ -57,12 +58,13 @@ directive("scroll-spy", function(element) {
 
     if (target.length) {
       target[0].$el.addClass(ACTIVE_CLASS);
+      emitter.trigger("scroll-spy:change", [target[0]]);
       activeTargets.addClass("scroll-target-" + target[0].id);
       prevTarget = target[0];
     }
   };
 
-  onScroll();
+  setTimeout(onScroll(), 0);
 
   $window.on("scroll", onScroll);
 });

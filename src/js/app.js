@@ -13,12 +13,15 @@
       fn: fn
     });
   };
+
+  // Sub pub emitter
+  var emitter = $({});
  
   // Processes all our "directives"
   function processDirectives() {
     $.each(directives, function(index, directive) {
       $("[data-" + directive.name + "]").each(function() {
-        directive.fn($(this));
+        directive.fn($(this), emitter);
       });
     });
   };

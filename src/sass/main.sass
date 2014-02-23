@@ -83,7 +83,7 @@ body > section:first-child {
 }
 
 section.about {
-  //background-color: $blue;
+  background-color: $white;
   h1 {
     font-weight: bold;
   }
@@ -281,6 +281,10 @@ section.contact {
 
 .hero-padding {
   padding: 50px;
+}
+
+.layer {
+  @include prefix(transform, translateZ(0));
 }
 
 @media (min-width: 992px) {
