@@ -4,7 +4,6 @@ $orange: #FF8B00;
 $white: #FDFDFD;
 $grey: rgb(150,150,150);
 $vendors: webkit, o, ms, moz;
-$mainFont: 'Bowlby One SC', cursive;
 
 @mixin stripes($angle, $fromColor, $toColor) {
   background-image: linear-gradient($angle, $fromColor 25%, $toColor 25%, $toColor 50%, $fromColor 50%, $fromColor 75%, $toColor 75%, $toColor);
@@ -91,6 +90,14 @@ section.about {
 
 section.projects {
  // background-color: $orange;
+
+  h3 {
+    font-weight: bold;
+  }
+
+  p {
+    color: darken($grey, 15%);
+  }
 }
 
 section.contact {
@@ -123,7 +130,10 @@ section.contact {
   text-align: right;
   z-index: 100;
   background-color: transparentize($white, 0.2);
- // border-bottom: 1px solid lighten($grey, 25%);
+
+  .bottom-border {
+    border-bottom: 1px solid lighten($grey, 25%);
+  }
 
   .name {
     color: $black;
@@ -157,7 +167,7 @@ section.contact {
 
 .site-label {
   position: absolute;
-  bottom: 0;
+  bottom: -15px;
   right: 0;
   color: $grey;
 }
@@ -290,5 +300,50 @@ section.contact {
 @media (min-width: 992px) {
   .hero-padding {
     padding-left: 0;
+  }
+}
+
+[data-carousel] {
+  position: relative;
+
+  > [data-carousel-item] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    @include prefix(transition, opacity 0.3s ease-in-out);
+  }
+
+  > [data-carousel-item].active {
+    opacity: 1;
+  }
+
+  [data-carousel-label] {
+    text-decoration: none;
+    color: $grey;
+  }
+
+  [data-carousel-label]:hover {
+    color: $blue; 
+  }
+
+  [data-carousel-next],
+  [data-carousel-previous] {
+    cursor: pointer;
+    position: relative;
+    top: 3px;
+  }
+
+  [data-carousel-next]:hover,
+  [data-carousel-previous]:hover {
+    color: $blue;
+  }
+
+  .carousel-hotzone {
+    z-index: 20;
+    cursor: pointer;
+    width: 50%;
+    height: 100%;
+    float:left;
   }
 }

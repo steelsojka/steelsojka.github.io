@@ -21,7 +21,8 @@ directive("scroll-spy", function(element, emitter) {
     return {
       $el: $this,
       id: $this.data("scroll-target"),
-      data: $this.data("scroll-spy-data")
+      data: $this.data("scroll-spy-data"),
+      event: $this.data("scroll-spy-event") || "scroll-spy:change"
     };
   });
 
@@ -58,7 +59,9 @@ directive("scroll-spy", function(element, emitter) {
 
     if (target.length) {
       target[0].$el.addClass(ACTIVE_CLASS);
-      emitter.trigger("scroll-spy:change", [target[0]]);
+
+      emitter.trigger(target[0].event, [target[0].data]);
+
       activeTargets.addClass("scroll-target-" + target[0].id);
       prevTarget = target[0];
     }

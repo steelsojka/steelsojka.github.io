@@ -4,7 +4,7 @@ directive("typeout", function(element, emitter) {
   var speed = 350;
   var hidden = false;
   var text = element.data("typeout") || "";
-  var event = element.data("typeout-change-event") || "typeout";
+  var event = "typeout:change";
 
   element.html(template);
 
@@ -44,9 +44,9 @@ directive("typeout", function(element, emitter) {
   blink();
   setText(text);
 
-  emitter.on(event, function(e, target) {
-    if (target.data) {
-      setText(target.data);
+  emitter.on(event, function(e, message) {
+    if (message) {
+      setText(message);
     }
 
     typeout();

@@ -56,6 +56,10 @@ section.about {
   section.about h1 {
     font-weight: bold; }
 
+section.projects h3 {
+  font-weight: bold; }
+section.projects p {
+  color: #707070; }
 
 
 .nav > div {
@@ -78,6 +82,8 @@ section.about {
   text-align: right;
   z-index: 100;
   background-color: rgba(253, 253, 253, 0.8); }
+  .sticky-nav .bottom-border {
+    border-bottom: 1px solid #d6d6d6; }
   .sticky-nav .name {
     color: #232323;
     font-size: 30px;
@@ -100,7 +106,7 @@ section.about {
 
 .site-label {
   position: absolute;
-  bottom: 0;
+  bottom: -15px;
   right: 0;
   color: #969696; }
 
@@ -215,3 +221,35 @@ section.about {
 @media (min-width: 992px) {
   .hero-padding {
     padding-left: 0; } }
+
+[data-carousel] {
+  position: relative; }
+  [data-carousel] > [data-carousel-item] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out; }
+  [data-carousel] > [data-carousel-item].active {
+    opacity: 1; }
+  [data-carousel] [data-carousel-label] {
+    text-decoration: none;
+    color: #969696; }
+  [data-carousel] [data-carousel-label]:hover {
+    color: #086CA2; }
+  [data-carousel] [data-carousel-next], [data-carousel] [data-carousel-previous] {
+    cursor: pointer;
+    position: relative;
+    top: 3px; }
+  [data-carousel] [data-carousel-next]:hover, [data-carousel] [data-carousel-previous]:hover {
+    color: #086CA2; }
+  [data-carousel] .carousel-hotzone {
+    z-index: 20;
+    cursor: pointer;
+    width: 50%;
+    height: 100%;
+    float: left; }
