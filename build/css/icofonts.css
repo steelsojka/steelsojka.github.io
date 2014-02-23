@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('/build/fonts/icomoon.eot?-r0gb73');
-	src:url('/build/fonts/icomoon.eot?#iefix-r0gb73') format('embedded-opentype'),
-		url('/build/fonts/icomoon.woff?-r0gb73') format('woff'),
-		url('/build/fonts/icomoon.ttf?-r0gb73') format('truetype'),
-		url('/build/fonts/icomoon.svg?-r0gb73#icomoon') format('svg');
+	src:url('/build/fonts/icomoon.eot?-quuek5');
+	src:url('/build/fonts/icomoon.eot?#iefix-quuek5') format('embedded-opentype'),
+		url('/build/fonts/icomoon.woff?-quuek5') format('woff'),
+		url('/build/fonts/icomoon.ttf?-quuek5') format('truetype'),
+		url('/build/fonts/icomoon.svg?-quuek5#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -62,29 +62,8 @@
 .icon-html52:before {
 	content: "\e60c";
 }
-.icon-file-pdf:before {
-	content: "\e60d";
-}
-.icon-chrome:before {
-	content: "\e60e";
-}
-.icon-firefox:before {
-	content: "\e60f";
-}
-.icon-IE:before {
-	content: "\e610";
-}
-.icon-opera:before {
-	content: "\e611";
-}
-.icon-safari:before {
-	content: "\e612";
-}
 .icon-css3:before {
 	content: "\e613";
-}
-.icon-file-css:before {
-	content: "\e614";
 }
 .icon-github3:before {
 	content: "\e615";
@@ -101,24 +80,21 @@
 .icon-linkedin:before {
 	content: "\e619";
 }
-.icon-flow-cascade:before {
-	content: "\e61a";
-}
-.icon-flow-branch:before {
-	content: "\e61b";
-}
-.icon-flow-tree:before {
-	content: "\e61c";
-}
-.icon-arrow-right:before {
-	content: "\e61d";
-}
 .icon-arrow-right2:before {
 	content: "\e61e";
 }
 .icon-arrow-left:before {
 	content: "\e61f";
 }
+.icon-arrow-down:before {
+	content: "\e60d";
+}
+.icon-arrow-up:before {
+	content: "\e60e";
+}
 .icon-arrow-left2:before {
-	content: "\e620";
+	content: "\e60f";
+}
+.icon-arrow-right:before {
+	content: "\e610";
 }

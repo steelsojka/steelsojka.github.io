@@ -10,8 +10,8 @@ directive("carousel", function(element, emitter) {
   });
 
   var label = element.find("[data-carousel-label]");
-
   var index = 0;
+  var timeoutId = null;
 
   var advance = function(back) {
 
@@ -39,6 +39,13 @@ directive("carousel", function(element, emitter) {
 
     element.height(getMaxSize());
     label.text(items[index].label).attr("href", items[index].link);
+
+    if (timeoutId !== null) {
+      clearTimeout(timeoutId);
+    }
+
+    // Auto advance after 15 seconds
+    timeoutId = setTimeout(advance, 15000);
   };
 
   var getMaxSize = function() {

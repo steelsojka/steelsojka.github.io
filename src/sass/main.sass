@@ -93,6 +93,12 @@ section.projects {
 
   h3 {
     font-weight: bold;
+
+    > div {
+      padding: 10px 10px 10px 0;
+      position: relative;
+      top: 2px;
+    }
   }
 
   p {
@@ -100,8 +106,14 @@ section.projects {
   }
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
 section.contact {
  // background-color: #FFF;
+
+  color: $grey;
 }
 
 .nav > div {
@@ -176,17 +188,19 @@ section.contact {
   z-index: 10;
   bottom: 0;
   right: 0;
-  color: $grey;
   background-color: transparentize($white, 0.2);
 
-  > div {
+  > * {
     display: inline-block;
     padding: 10px;
     font-size: 24px;
+    text-decoration: none;
+    color: $grey;
   }
 
-  > div:hover {
+  > *:hover {
     color: $blue;
+    text-decoration: none;
   }
 }
 
@@ -311,7 +325,7 @@ section.contact {
     top: 0;
     left: 0;
     opacity: 0;
-    @include prefix(transition, opacity 0.3s ease-in-out);
+    @include prefix(transition, opacity 0.4s ease-in-out);
   }
 
   > [data-carousel-item].active {
