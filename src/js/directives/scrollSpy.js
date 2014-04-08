@@ -1,4 +1,8 @@
-directive("scroll-spy", function(element, emitter) {
+directive("scroll-spy", function(element, emitter, settings) {
+  if (settings.isMobile) {
+    return;
+  }
+
   var ACTIVE_CLASS = "active";
   var $prevSource, prevTarget;
   var $window = $(window);

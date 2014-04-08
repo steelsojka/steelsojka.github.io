@@ -1,4 +1,8 @@
-directive("typeout", function(element, emitter) {
+directive("typeout", function(element, emitter, settings) {
+  if (settings.isMobile) {
+    return;
+  }
+
   var template = "<span class='typeout'>" + (element.data("typeout-default") || "") + "</span><span class='typeout-cursor'></span>";
 
   var speed = 350;

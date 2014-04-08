@@ -14,6 +14,12 @@
     });
   };
 
+  var settings = {
+    // This is just a quick hack to check for mobile devices...
+    // We only need it to disable a couple things
+    isMobile: /Android|iPod|iPad|iPhone/.test(navigator.userAgent)
+  };
+
   // Sub pub emitter
   var emitter = $({});
  
@@ -21,7 +27,7 @@
   function processDirectives() {
     $.each(directives, function(index, directive) {
       $("[data-" + directive.name + "]").each(function() {
-        directive.fn($(this), emitter);
+        directive.fn($(this), emitter, settings);
       });
     });
   };

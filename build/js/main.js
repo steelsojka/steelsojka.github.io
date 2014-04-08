@@ -14,6 +14,12 @@
     });
   };
 
+  var settings = {
+    // This is just a quick hack to check for mobile devices...
+    // We only need it to disable a couple things
+    isMobile: /Android|iPod|iPad|iPhone/.test(navigator.userAgent)
+  };
+
   // Sub pub emitter
   var emitter = $({});
  
@@ -21,7 +27,7 @@
   function processDirectives() {
     $.each(directives, function(index, directive) {
       $("[data-" + directive.name + "]").each(function() {
-        directive.fn($(this), emitter);
+        directive.fn($(this), emitter, settings);
       });
     });
   };
@@ -145,7 +151,11 @@ directive("scroll-animate", function(element) {
   });
 });
 
-directive("scroll-spy", function(element, emitter) {
+directive("scroll-spy", function(element, emitter, settings) {
+  if (settings.isMobile) {
+    return;
+  }
+
   var ACTIVE_CLASS = "active";
   var $prevSource, prevTarget;
   var $window = $(window);
@@ -220,7 +230,11 @@ directive("scroll-spy", function(element, emitter) {
 });
 
 
-directive("typeout", function(element, emitter) {
+directive("typeout", function(element, emitter, settings) {
+  if (settings.isMobile) {
+    return;
+  }
+
   var template = "<span class='typeout'>" + (element.data("typeout-default") || "") + "</span><span class='typeout-cursor'></span>";
 
   var speed = 350;
