@@ -13,6 +13,10 @@ directive("carousel", function(element, emitter) {
   var index = 0;
   var timeoutId = null;
 
+  var setContainerHeight = function() {
+    element.height(getMaxSize());
+  };
+
   var advance = function(back) {
 
     var newIndex;
@@ -35,9 +39,10 @@ directive("carousel", function(element, emitter) {
       this.$el.removeClass("active").css("z-index", 0);
     });
 
+    setContainerHeight();
+
     items[index].$el.addClass("active").css("z-index", 10);
 
-    element.height(getMaxSize());
     label.text(items[index].label).attr("href", items[index].link);
 
     if (timeoutId !== null) {
@@ -64,6 +69,12 @@ directive("carousel", function(element, emitter) {
 
   var nextEl = element.find("[data-carousel-next]").on('click', next);
   var prevEl = element.find("[data-carousel-previous]").on('click', previous);
+
+  // If we have images that determine the size of the container
+  // resize when they are loaded
+  $.each(items, function() {
+    this.$el.find("img")[0].onload = setContainerHeight;
+  });
 
   advance(0);
 
