@@ -395,3 +395,33 @@ section.contact {
 .hover .email-flip {
   @include prefix(transform, scale(1) rotateY(0deg));
 }
+
+.source-code {
+  right: 0;
+  top: 0;
+  z-index: 101;
+}
+
+.social .icon-code {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+  .source-code {
+    display: none;
+  }
+
+  .social .icon-code {
+    display: inline;
+  }
+}
+
+@media (max-width: 960px) {
+  .sticky-nav .container div:last-child {
+    display: none;
+  }
+
+  .sticky-nav {
+    border-bottom: 1px solid lighten($grey, 25%);
+  }
+}
