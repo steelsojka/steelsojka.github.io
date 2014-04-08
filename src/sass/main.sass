@@ -20,6 +20,13 @@ $vendors: webkit, o, ms, moz;
   #{$rule}: #{$argument};
 }
 
+@mixin prefixProp($rule, $prop) {
+  @each $prefix in $vendors {
+    #{$rule}: -#{$prefix}-#{$prop};
+  }
+  #{$rule}: #{$prop};
+}
+
 .full-width {
   width: 100%;
 }
@@ -30,6 +37,18 @@ $vendors: webkit, o, ms, moz;
 
 .relative {
   position: relative;
+}
+
+.flex {
+  @include prefixProp(display, flex);
+}
+
+.flex .flex-center {
+  margin: auto;
+}
+
+.full-height {
+  height: 100%;
 }
 
 body {
@@ -360,4 +379,19 @@ section.contact {
     height: 100%;
     float:left;
   }
+}
+
+.email-flip {
+  margin: 20px 0 0 0;
+  font-size: 18px;
+  color: $blue;
+  @include prefix(transform, scale(0) rotateY(90deg));
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  -moz-transition: -moz-transform 0.5s ease-in-out;
+  -o-transition: -o-transform 0.5s ease-in-out;
+  -ms-transition: -ms-transform 0.5s ease-in-out;
+}
+
+.hover .email-flip {
+  @include prefix(transform, scale(1) rotateY(0deg));
 }

@@ -14,7 +14,7 @@ var mainJs = "build/js";
 gulp.task("scripts", function() {
   return gulp.src(jsSource)
     //.pipe(uglify())
-    .pipe(concat("main.min.js"))
+    .pipe(concat("main.js"))
     //.pipe(rename("main.min.js"))
     .pipe(gulp.dest(mainJs));
 });
@@ -23,7 +23,7 @@ gulp.task("styles", function() {
   return gulp.src(sassSource)
     .pipe(sass())
 //    .pipe(minifyCss())
-    .pipe(rename("main.min.css"))
+    .pipe(rename("main.css"))
     .pipe(gulp.dest("build/css"));
 });
 
