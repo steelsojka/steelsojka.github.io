@@ -29,7 +29,8 @@ body {
 body > section {
   min-height: 100%;
   padding: 62px 0 0 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  height: 100vh; }
 
 .text-orange {
   color: #FF8B00; }
